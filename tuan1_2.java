@@ -126,6 +126,23 @@ public class tuan1_2 {
             }
             i++;
         }
+	int chon = input.nextInt();
+			switch (chon) {
+			case 1:
+				System.out.println("Thực hiện chức năng 1");
+				break;
+			case 2:
+				System.out.println("Thực hiện chức năng 2");
+				break;
+			case 3:
+				System.out.println("Thực hiện chức năng 3");
+				break;
+			default:
+				System.out.println("Tạm biệt");
+				cont = false;
+				break;
+			}
+		} while (cont);
 	//xây dựng giao diện chương trình main
 	//[1]ptb2
 	//[2]...
