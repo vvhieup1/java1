@@ -102,6 +102,30 @@ public class tuan1_2 {
 		return n==daoSo(n);
 	}
     //liet ke cac so fibo nho hon n la so nt
+	//float a=5,b=10,c=7;
+		int n=5;
+		basic.giaiPTBac2(a, b, c);
+		long rs = basic.GT(n);
+		System.out.printf("%d=%d\n", n,rs);
+		rs = basic.Fibo(n);
+		System.out.printf("fibo(%d)=%d\n",n,rs);
+		
+		basic.LietKeSNT(n);
+		basic.Cau6(n);
+		
+		n=1234;
+		long s=basic.TongCacChuSo(n);
+	 System.out.print("Nhập số tự nhiên n = ");
+        int n = input.nextInt();
+        System.out.printf("Các số fibonacci nhỏ hơn %d và là số nguyên tố: ", n);
+        int i = 0;
+        while (fibonacci(i) < 100) {
+            int fi = fibonacci(i);
+            if (isPrimeNumber(fi)) {
+                System.out.print(fi + " ");
+            }
+            i++;
+        }
 	//xây dựng giao diện chương trình main
 	//[1]ptb2
 	//[2]...
