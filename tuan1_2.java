@@ -147,4 +147,37 @@ public class tuan1_2 {
 	//[1]ptb2
 	//[2]...
 	//Chon chuong trinh
+public static float[] NhapMang(){
+		Scanner sc=new Scanner(System.in);
+		System.out.println("nhap so luong pt: ");
+		int n=sc.nextInt();
+		float[] M=new float[n];
+		for (int i = 0; i < M.length; i++) {
+			System.out.print("A["+i+"] = ");
+			M[i] = sc.nextInt();
+		}
+		sc.close();
+		return M;
+	}
+	public static void XuatMang(float mang[]) {
+		System.out.print("Danh sách mảng: ");
+		for(int i=0;i<mang.length;i++)
+		{
+			System.out.print("\t"+mang[i]);
+		}
+	}
+	public static float[] TongMang(float mang[]) {
+		System.out.println("tong cac pt trong mang: ");
+		float sum;
+		for (int i = 0; i < mang.length; i++) {
+			sum=sum+mang[i];
+		}
+		return sum;
+	}
+	public static float[] MinMaxAverage(float mang[]) {
+		return null;
+	}
+	public static int[] [] CongMT(int[][] mt1,int[][] mt2) {
+		return null;
+	}
 }
