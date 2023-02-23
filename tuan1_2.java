@@ -181,3 +181,94 @@ public static float[] NhapMang(){
 		return null;
 	}
 }
+package OOP;
+
+public class Point {
+//	private double radius;
+//	private string color;
+//	public Circle() {
+//		radius=1;
+//		color="red";
+//	}
+//	public Circle(double r) {
+//		radius=r;
+//		color="red";
+//	}
+//	public double getRadius() {
+//		return radius;
+//	}
+//	public double getArea() {
+//		return Math.PI*Math.pow(radius,2);
+//	}
+/*
+ * int id,salary;
+ * String firstName,lastName;
+ *_setget4cai;
+ *_khoitaocott;
+ *public int getAnnualSalary(){
+ *return salary*12;
+ *} 
+ *public int raiseSalary(int percent){
+ *return salary + salary*percent/100;
+ *}
+ *public String toString(){
+ *return String.format("Employee[id=%d,nam=%s,salary=%d]",id,firstNam,lastName,salary);
+ *}
+ **/
+	private int x,y;
+
+	public int getX() {
+		return x;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setY(int y) {
+		this.y = y;
+	}
+	public Point() {
+		x=0;y=0;
+	}
+	public Point(int x, int y) {
+		super();
+		this.x = x;
+		this.y = y;
+	}
+	public Point(Point p) {
+		this.x=p.x;
+		this.y=p.y;
+	}
+	public double Distance() {
+		double d=Math.sqrt(Math.pow(x, 2)+Math.pow(y, 2));
+		return d;
+	}
+	public double Distance(Point q) {
+		double d=Math.sqrt(Math.pow(x-q.x, 2)+Math.pow(y-q.y, 2));
+		return d;
+	}
+	@Override
+	public String toString() {
+		return String.format("(%d,%d)", x,y);
+	}
+}
+//import OOP.Point;
+//public class Main{
+//	public static void main(String[] args) {
+//		OOP();
+//	}
+//	static void OOP() {
+//		Point p=new Point();
+//		System.out.println("P"+p.toString());
+//		Point p2=new Point(5,10);
+//		System.out.println("P2"+p2.toString());
+//		double p2p=p2.Distance(p);
+//		double pp2=OOP.point.Distance(p,p2);
+//		System.out.println("\n %f=%f",p2p,pp2);
+//	}
+//}
