@@ -272,3 +272,137 @@ public class Point {
 //		System.out.println("\n %f=%f",p2p,pp2);
 //	}
 //}
+package hinh;
+
+public class Shape {
+	private String color;
+	private boolean filled;
+	public Shape() {
+		color="red";
+		filled=true;
+	}
+	public Shape(String color, boolean filled) {
+		super();
+		this.color = color;
+		this.filled = filled;
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public boolean isFilled() {
+		return filled;
+	}
+	public void setFilled(boolean filled) {
+		this.filled = filled;
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return String.format("Shape[color=%s,filled=%s]", color,filled?"true":"false");
+	}
+}
+package hinh;
+
+public class Rectangle extends Shape {
+	private double length, width;
+	public Rectangle() {
+		super();
+		length  = 1;
+		width = 1;
+	}
+	public Rectangle(double length, double width) {
+		super();
+		this.length = length;
+		this.width = width;
+	}
+	
+	public Rectangle(double width,double length,String color, boolean filled) {
+		super(color, filled);
+		this.width=width;
+		this.length=length;
+	}
+	public double getLength() {
+		return length;
+	}
+	public void setLength(double length) {
+		this.length = length;
+	}
+	public double getWidth() {
+		return width;
+	}
+	public void setWidth(double width) {
+		this.width = width;
+	}
+	public double getArea() {
+		return length * width;
+	}
+	public double getPerimeter() {
+		return (length + width) * 2;
+	}
+	@Override
+	public String toString() {
+		return String.format("Rectangle[length = %f , width = %f,color=%s,filled=%s]", length,width,getColor(),isFilled()?"true":"false");
+	}
+	
+}
+package hinh;
+
+public class Circle extends Shape {
+	private double radius;
+	public Circle() {
+		super();
+		radius = 1;
+	}
+	
+	public Circle(double radius,String color, boolean filled) {
+		super(color, filled);
+		this.radius=radius;
+	}
+
+	public double getRadius() {
+		return radius;
+	}
+	public double getArea() {
+		return Math.PI * Math.pow(radius, 2);
+	}
+	public void setRadius(double radius) {
+		this.radius = radius;
+	}
+	public double getPerimeter() {
+		return Math.PI*2*radius;
+	}
+	@Override
+	public String toString() {
+		return String.format("Circle[radius=%f,color=%s,filled=%s]", radius,getColor(),isFilled()?"true":"false");
+	}
+}
+package hinh;
+
+public class Square extends Rectangle{
+        public Square() {
+        super();
+}
+public Square(double side) {
+        super(side,side);
+}
+public Square(double side,String color,boolean filled) {
+        super(side,side,color,filled);
+}
+public double getSide() {
+        return getLength();
+}
+public void setSide(double side) {
+        setWidth(side);
+        setLength(side);
+}
+@Override
+public String toString() {
+        return String.format("Square[Rectangle[Shape[color=%s,filled=%s],w=%f,l=%f]]", getColor(),isFilled()?"true":"false",getWidth(),getLength());
+}
+
+}
+
+
