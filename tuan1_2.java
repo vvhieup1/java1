@@ -404,5 +404,79 @@ public String toString() {
 }
 
 }
+package P1;
+
+import java.util.ArrayList;
+
+public class Person {
+	private String id;
+	private String firstName;
+	private String lastName;
+	private String dob;
+	private String pob;
+	private char gender;
+	private String homeTown;
+	public Person(String id, String firstName, String lastName, String dob, String pob, char gender, String homeTown) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.dob = dob;
+		this.pob = pob;
+		this.gender = gender;
+		this.homeTown = homeTown;
+	}
+	@Override
+	public String toString() {
+		return String.format("P[id=%s,FN=%s,dob=%s,pob=%s,gender=%c,hometown=%s]", id,firstName,lastName,dob,pob,gender,homeTown);
+	}
+	public static Person parse(String str) {
+		String[] rs=str.split("\\|");
+		char t=rs[5].charAt(0);
+		if(t=='0') t='m';
+		else if(t=='1')t='f';
+		else t='n';
+		Person p=new Person(rs[0],rs[1],rs[2],rs[3],rs[4],t,rs[6]);
+		return p;
+		}
+	public static ArrayList<Person>parse(String[] Arrstr){
+		ArrayList<Person> rs=new ArrayList<Person>();
+		for (String s : Arrstr) {
+			Person p=Person.parse(s);
+			rs.add(p);
+		}
+		return rs;
+	}
+}
+public static void main(String[] args) {
+//		String s1="Hello World";
+//		String s2=s1.replace('H', 'h');
+//		System.out.println(s2);
+//		String s=s1.format("%s,%s", s1,s2);
+//		String[] rs=java.split(" ");
+//		for (String string : rs) {
+//			System.out.println(item);
+//		}
+//		String strP="101|Nguyen|Tuan|1.1.2001|Hue|0|Hue";
+//		Person person=Person.parse(strP);
+//		System.out.println(person.toString());
+//		String s1="a";
+//		String s2="b";
+//		ArrayList<String> ls=new ArrayList<String>();
+//		ls.add(s1);
+//		ls.add(s2);
+		File file=new File("sinhvien.txt");
+		Scanner scanner;
+		try {
+			scanner = new Scanner(file);
+			while(scanner.hasNext()) {
+				String s=scanner.nextLine();
+				System.out.println(s);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+	}
 
 
